@@ -1645,29 +1645,6 @@ HTMLCanvasElement.prototype.toDataURL = function (...args) {
 };
 </script>
     <script>
-      window.addEventListener('load', function () {
-        setTimeout(function () {
-          var bannerHost = document.getElementById('adsterraBanner')
-          if (!bannerHost) {
-            return
-          }
-          while (bannerHost.firstChild) {
-            bannerHost.removeChild(bannerHost.firstChild)
-          }
-          window.atOptions = {
-            key: 'd147d9e23a99cb2638410dd0158cd2a2',
-            format: 'iframe',
-            height: 90,
-            width: 728,
-            params: {},
-          }
-          var invokeScript = document.createElement('script')
-          invokeScript.src = 'https://www.highperformanceformat.com/d147d9e23a99cb2638410dd0158cd2a2/invoke.js'
-          bannerHost.appendChild(invokeScript)
-        }, 2000)
-      })
-    </script>
-    <script>
       try {
         const search = new URLSearchParams(window.location.search)
         const privacy = search.get('privacy')
