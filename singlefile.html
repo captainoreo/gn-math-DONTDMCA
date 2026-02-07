@@ -1645,16 +1645,39 @@ HTMLCanvasElement.prototype.toDataURL = function (...args) {
 };
 </script>
     <script>
-        try {
-        const search = new URLSearchParams(window.location.search);
-        const privacy = search.get('privacy');
-        if (privacy) {
-            loadPrivacy();
-        }
-        } catch(error){}
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var bannerHost = document.getElementById('adsterraBanner')
+          if (!bannerHost) {
+            return
+          }
+          while (bannerHost.firstChild) {
+            bannerHost.removeChild(bannerHost.firstChild)
+          }
+          window.atOptions = {
+            key: 'd147d9e23a99cb2638410dd0158cd2a2',
+            format: 'iframe',
+            height: 90,
+            width: 728,
+            params: {},
+          }
+          var invokeScript = document.createElement('script')
+          invokeScript.src = 'https://www.highperformanceformat.com/d147d9e23a99cb2638410dd0158cd2a2/invoke.js'
+          bannerHost.appendChild(invokeScript)
+        }, 2000)
+      })
     </script>
     <script>
-        navigator.serviceWorker.register(location.protocol+"//"+location.hostname+"/sw.js");
+      try {
+        const search = new URLSearchParams(window.location.search)
+        const privacy = search.get('privacy')
+        if (privacy) {
+          loadPrivacy()
+        }
+      } catch (error) {}
+    </script>
+    <script>
+      navigator.serviceWorker.register(location.protocol + '//' + location.hostname + '/sw.js')
     </script>
 </body>
 </html>
